@@ -1,0 +1,17 @@
+|══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════|
+|     PAGEINDEX PROMPT SLICING — CONSOLIDATED COMPARISON                                                               |
+|══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════|
+|                                                                                                                      |
+|  Mode                               Rows  Full Tok   Sliced Tok  Reduc%   Routing  Full     Sliced   Delta           |
+|──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────|
+|  Manual keywords                    10    30105      4221        86.0%    100%     8.2     8.2     +0.0              |
+|  LLM-generated keywords             10    30105      4197        86.1%    100%     8.1     8.2     +0.1              |
+|  Manual keywords + cross-encoder    10    30105      4160        86.2%    100%     8.1     7.9     -0.2              |
+|  LLM keywords + cross-encoder       10    30105      4247        85.9%    100%     8.3     8.0     -0.3              |
+|──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────|
+|                                                                                                                      |
+|Notes:                                                                                                                |
+|  Full Tok and Sliced Tok are exact Anthropic input token counts from API usage.                                      |
+|  Routing is the percentage of queries where the expected section appeared in the selected sections.                  |
+|  Delta is sliced answer score minus full prompt answer score.                                                        |
+|══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════|

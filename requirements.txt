@@ -1,0 +1,6 @@
+# Mirrors pyproject.toml for pip users. Preferred: `uv sync` or `pip install -e . --group dev`.
+anthropic>=0.25.0
+sentence-transformers>=3.0.0
+pytest>=8.0
+ipykernel>=6.0
+nbconvert>=7.0

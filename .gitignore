@@ -1,0 +1,19 @@
+# Secrets: never commit. Copy .env.example to .env instead.
+.env
+
+# Local environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Old local snapshot (contains .env)
+*.zip
+
+# Partial checkpoints from interrupted runs
+results/*_partial.*
+
+# Tool folders
+.agents/
+.codex/
+.pytest_cache/

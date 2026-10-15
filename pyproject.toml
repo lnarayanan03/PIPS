@@ -1,0 +1,32 @@
+[project]
+name = "pips"
+version = "0.1.0"
+description = "PIPS: PageIndex-Inspired Prompt Slicing. Benchmarks routing a large system prompt down to its relevant sections before LLM inference."
+readme = "README.md"
+authors = [{ name = "Lakshmi Narayanan Ranganatha" }]
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.25.0",
+    "sentence-transformers>=3.0.0",
+]
+
+[project.scripts]
+pips-benchmark = "pips.cli.benchmark:main"
+pips-compare = "pips.cli.compare:main"
+
+[build-system]
+requires = ["uv_build>=0.8.0,<0.13"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: makes real (paid) Anthropic API calls; skipped unless PIPS_RUN_PAID=1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ipykernel>=6.0",
+    "nbconvert>=7.0",
+]

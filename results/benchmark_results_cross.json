@@ -1,0 +1,272 @@
+[
+  {
+    "id": "Q01",
+    "query": "My invoice shows a wrong charge and I want a refund for the billing error.",
+    "expected_section": "billing_payments",
+    "matched_sections": [
+      "returns_refunds",
+      "billing_payments"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 85.2,
+    "full": {
+      "tokens": 30107,
+      "latency_s": 10.74,
+      "answer": "I'd be happy to help you resolve this billing error. Here's how we can get this addressed:\n\n## What I Need From You\n\nTo investigate and process a refund for a verified billing error, please provide:\n\n1. **Invoice number** and the date of the charge in question\n2. **Description of the discrepancy** \u2014 what was charged vs. what you believe is correct\n3. **Account email or workspace ID** to locate your record\n4. **Your role on the account** (Owner, Admin, or Billing contact) \u2014 I'll need to verify billing authority before discussing invoice details or processing any changes\n\n---\n\n## What Happens Next\n\nOnce I can review the details:\n\n- **If a billing error is confirmed**, a full refund is issued within **5 business days** \u2014 this applies regardless of the standard refund window, as verified billing errors are treated separately from policy-based refund requests.\n- **If the dispute involves more than $500**, it follows an escalated review path with a team lead and Billing Director involved in the decision.\n- **If there's any uncertainty**, I'll open a formal review rather than make assumptions \u2014 I want to make sure we get this right.\n\n---\n\n## Important Reminders\n\n- **Billing disputes should be raised within 60 days** of the charge. If you're approaching or past that window, let me know and I can note any applicable circumstances.\n- For your security, please **do not share full card numbers or CVV** in this chat \u2014 if a payment method update is needed, I'll send you a secure hosted link.\n\n---\n\nPlease share the details above and I'll get the review started right away.",
+      "score": 7,
+      "correct": true,
+      "reasoning": "The AI answer correctly mentions the 60-day dispute window and 5-7 business days resolution (stated as '5 business days'), but omits the specific submission channels (support ticket or billing@company.com) while adding extra details not in the ground truth."
+    },
+    "sliced": {
+      "tokens": 4457,
+      "latency_s": 9.59,
+      "answer": "I can help you review a potential billing error. Here's how the process works and what to expect:\n\n## Billing Error Refunds\n\n**Policy:** Verified billing errors qualify for a **full refund, issued within 5 business days**.\n\n---\n\n## Steps to Move Forward\n\nTo investigate your case accurately, I'll need a few details:\n\n1. **Invoice number** \u2013 found in your billing dashboard or invoice email\n2. **The specific charge in question** \u2013 amount, date, and what you believe is incorrect\n3. **Your account/workspace ID** \u2013 to pull up your billing ledger\n4. **Billing contact verification** \u2013 I'll need to confirm you're an account Owner or billing admin before discussing invoice details\n\n---\n\n## What Happens Next\n\nOnce I can verify your identity and review the ledger:\n\n- I'll compare the charge against your plan, billing cycle, and any upgrades or add-ons\n- If the error is **confirmed**, a full refund will be initiated within **5 business days**\n- If the dispute involves **more than $500**, it follows an escalated review path: Team Lead \u2192 Billing Director \u2192 VP Finance approval\n- Disputes must be raised **within 60 days of the charge** \u2014 please let me know if you're close to that window\n\n---\n\n## Important Notes\n\n- If a duplicate charge is involved, I'll verify whether both transactions **fully settled** (vs. one being an authorization hold) before processing a refund\n- I can open this review now, but I cannot confirm or approve a refund until the ledger is verified by the responsible owner\n\nPlease share the details above and I'll get this escalated promptly.",
+      "score": 6,
+      "correct": false,
+      "reasoning": "The answer correctly mentions the 60-day dispute window and 5-7 business days resolution (though it says '5 business days' rather than '5-7'), but it does not mention the required submission methods (support ticket or billing@company.com), and it introduces several fabricated details not in the ground truth (escalation paths, $500 threshold, identity verification requirements, account ID requests)."
+    }
+  },
+  {
+    "id": "Q02",
+    "query": "I am getting ERR_API_429 error when calling your REST API.",
+    "expected_section": "technical_support",
+    "matched_sections": [
+      "technical_support",
+      "onboarding"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 85.8,
+    "full": {
+      "tokens": 30107,
+      "latency_s": 9.92,
+      "answer": "## ERR_API_429 \u2014 Rate Limit Exceeded\n\nThis error means your application has exceeded the API request rate limit for your current plan. Here's how to resolve it:\n\n---\n\n### **Your Plan's Rate Limits**\n\n| Plan | Rate Limit |\n|------|-----------|\n| Starter | 100 requests/minute |\n| Professional | 500 requests/minute |\n| Enterprise | 2,000 requests/minute |\n\n---\n\n### **Immediate Steps**\n\n1. **Wait at least 60 seconds** before retrying \u2014 this allows the rate limit window to reset.\n2. **Check your current plan** to confirm the limit that applies to you.\n3. **Review your API call patterns** to identify any unnecessary or redundant requests.\n\n---\n\n### **Longer-Term Fixes**\n\n- **Implement exponential backoff** \u2014 when you receive a 429, wait progressively longer before each retry rather than retrying immediately.\n- **Use idempotency keys** to avoid duplicate requests on retry.\n- **Batch your requests** where possible to reduce total call volume.\n- **Cache responses** for data that doesn't change frequently.\n\n---\n\n### **If You Need Higher Limits**\n\n- If your workload genuinely requires more throughput, consider **upgrading your plan**.\n- **Enterprise customers** with business-critical import or processing needs can request a **temporary limit review** \u2014 please share your expected volume and deadline when contacting support.\n\n---\n\n### **Finding Your API Keys**\n\nYou can manage your API keys and monitor usage under:\n**Settings > Developer > API Keys**\n\n---\n\nCould you tell me which plan you're on and roughly how many requests per minute your application is making? That will help me advise whether you need a configuration change, a worka",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies ERR_API_429 as rate limit exceeded, advises checking plan limits, and explicitly states to wait 60 seconds before retrying, fully covering all three ground-truth facts."
+    },
+    "sliced": {
+      "tokens": 4283,
+      "latency_s": 9.11,
+      "answer": "## ERR_API_429 \u2013 Rate Limit Exceeded\n\nYou're hitting the API rate limit for your current plan. Here's how to resolve it:\n\n---\n\n### Immediate Steps\n1. **Wait 60 seconds** before retrying \u2014 this is the standard reset window.\n2. **Check your current plan's rate limit:**\n\n| Plan | Rate Limit |\n|---|---|\n| Starter | 100 requests/min |\n| Pro | 500 requests/min |\n| Enterprise | 2,000 requests/min |\n\n---\n\n### Longer-Term Recommendations\n\n- **Implement exponential backoff** \u2014 progressively increase the wait time between retries after each 429 response.\n- **Chunk large operations** \u2014 if you're doing bulk actions (e.g., a large data import), break requests into smaller batches that stay within your plan's per-minute limit.\n- **Use idempotency keys** \u2014 for concurrent or retry scenarios, this prevents duplicate writes while managing request flow.\n\n---\n\n### If You're Running a Large Import (e.g., 10,000+ records)\nEnterprise customers can request a **temporary import limit review**. Please provide:\n- Expected total volume\n- Your deadline or import window\n\nI can help open that review if applicable.\n\n---\n\n### Managing Your API Keys\nYou can review and manage your API configuration under:\n**Settings > Developer > API Keys**\n\n---\n\nCould you share your **plan type** and roughly how many requests per minute you're sending? That will help me confirm whether you're within limits or if escalation is needed.",
+      "score": 7,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies ERR_API_429 as a rate limit exceeded error, advises checking plan limits, and recommends waiting 60 seconds before retrying, matching all three ground-truth facts, though it also includes additional information (plan tiers, exponential backoff, etc.) that is not verified by the ground truth."
+    }
+  },
+  {
+    "id": "Q03",
+    "query": "How do I set up SSO with Okta for my enterprise account?",
+    "expected_section": "account_management",
+    "matched_sections": [
+      "onboarding",
+      "account_management"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.1,
+    "full": {
+      "tokens": 30106,
+      "latency_s": 9.61,
+      "answer": "## Setting Up SSO with Okta for Your Enterprise Account\n\nSSO via SAML 2.0 is available on the **Enterprise plan**. Here's a step-by-step guide:\n\n---\n\n### Prerequisites\n- You must have an **Owner or Admin role** to configure SSO\n- Your organization must be on the **Enterprise plan**\n- Have your Okta admin credentials ready\n\n---\n\n### Required Okta Field Mappings\n\nConfigure the following attributes in your Okta SAML app:\n\n| Field | Value |\n|-------|-------|\n| **NameID** | User's primary email (email format required) |\n| **firstName** | `given_name` |\n| **lastName** | `family_name` |\n| **email** | `email` |\n\n> \u26a0\ufe0f A **NameID mismatch** is one of the most common setup issues. Ensure NameID is set to email format before enabling enforcement.\n\n---\n\n### Setup Steps\n\n1. **In Okta:** Create a new SAML 2.0 application and configure the attribute mappings above\n2. **Copy from Okta:** Gather your **IdP SSO URL** and **X.509 certificate**\n3. **In TechCorp:** Navigate to **Settings > SSO** and paste the IdP SSO URL and certificate\n4. **Test first:** Keep SSO enforcement **off** during initial testing \u2014 verify login works for a test user before enforcing org-wide\n5. **Enable enforcement** once you've confirmed successful authentication\n\n---\n\n### Additional Capabilities Available\n\n- **Just-in-Time (JIT) provisioning** \u2014 automatically creates user accounts on first login\n- **SCIM provisioning** \u2014 available for automated user lifecycle management (",
+      "score": 7,
+      "correct": true,
+      "reasoning": "The answer correctly identifies SAML 2.0, Enterprise plan requirement, Okta support, and SCIM provisioning availability, which are all the key ground-truth facts, though it includes additional details not verified by the ground truth."
+    },
+    "sliced": {
+      "tokens": 4186,
+      "latency_s": 9.07,
+      "answer": "# Setting Up SSO with Okta for Your Enterprise Account\n\nHere's a step-by-step guide to get SAML 2.0 SSO configured with Okta:\n\n---\n\n## Prerequisites\n- Confirm you are on the **Enterprise plan** (SSO is Enterprise-only)\n- You'll need **Owner or Admin** role access to complete this setup\n\n---\n\n## Required Okta Field Mappings\n\nConfigure the following attributes in your Okta SAML application:\n\n| Field | Value |\n|---|---|\n| **NameID** | User's primary email (email format required) |\n| **firstName** | `given_name` |\n| **lastName** | `family_name` |\n| **email** | `email` |\n\n> \u26a0\ufe0f **Important:** Ensure the NameID is set to **email format**. A NameID mismatch is a common configuration error that will prevent SSO from working.\n\n---\n\n## Setup Steps\n\n1. **Create a SAML 2.0 app** in your Okta admin console\n2. **Configure the attribute mappings** as listed above\n3. **Copy your IdP details** from Okta \u2014 you'll need:\n   - IdP SSO URL\n   - SAML certificate\n4. **Navigate to Settings > SSO** in TechCorp and paste the IdP SSO URL and certificate\n5. **Test SSO with enforcement turned OFF** first \u2014 verify login works before enforcing it for your org\n\n---\n\n## Additional Capabilities Available\n\n- **Just-in-Time (JIT) provisioning** \u2014 automatically creates user accounts on first SSO login\n- **SCIM provisioning** \u2014 for automated user lifecycle management (creation, updates, deactivation)",
+      "score": 8,
+      "correct": true,
+      "reasoning": "The answer correctly states SSO uses SAML 2.0, is available on Enterprise plan only, Okta is supported, and SCIM provisioning is available, covering all ground-truth facts with additional helpful detail."
+    }
+  },
+  {
+    "id": "Q04",
+    "query": "Does the Professional plan include Gantt chart and time tracking?",
+    "expected_section": "product_features",
+    "matched_sections": [
+      "product_features",
+      "onboarding"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.4,
+    "full": {
+      "tokens": 30103,
+      "latency_s": 7.27,
+      "answer": "Yes, the **Professional plan** includes both of those features:\n\n- **Gantt chart view** \u2713 \u2014 Available on Professional and Enterprise plans (not available on Starter).\n- **Time tracking** \u2713 \u2014 Included on Professional, along with **budget tracking** as well.\n\nThe Professional plan is priced at **$99/month** (or **$950/year** with the 20% annual discount) and supports up to 25 users with 100GB storage.\n\nHere's a quick summary of other notable Professional plan features that come alongside those:\n- Unlimited active projects\n- Advanced analytics and custom reports\n- Workflow automation (up to 50 automations)\n- Custom fields (up to 50 per project)\n- API access\n- Priority support\n\nWould you like help upgrading to Professional or have any other questions?",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly confirms that the Professional plan includes both Gantt chart view and time tracking, which matches the ground truth facts."
+    },
+    "sliced": {
+      "tokens": 4101,
+      "latency_s": 6.43,
+      "answer": "Yes, the **Professional plan** includes both of those features. Here's a quick summary:\n\n- **Gantt chart view** \u2014 Available on Professional (and Enterprise) plans. This is an upgrade from the Starter plan, which only includes Kanban and list views.\n- **Time tracking** \u2014 Also included in the Professional plan, along with **budget tracking**, giving your team the ability to monitor hours and financials at the project level.\n\nAdditionally, the Professional plan includes other related capabilities you may find useful, such as:\n\n- **Advanced analytics and custom reports**\n- **Workflow automation** (up to 50 automations)\n- **Custom fields** (up to 50 per project)\n- **API access**\n- **100GB storage**\n- **Priority support**\n\nIf you're currently on the **Starter plan** and looking to access Gantt or time tracking, upgrading to Professional would be the path to unlock those features. Let me know if you have any questions about the upgrade process or any other features!",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly confirms that the Professional plan includes both Gantt chart view and time tracking, which matches the ground-truth facts, though it adds extra details that may or may not be verified."
+    }
+  },
+  {
+    "id": "Q05",
+    "query": "I want to cancel my subscription and get my money back.",
+    "expected_section": "returns_refunds",
+    "matched_sections": [
+      "returns_refunds",
+      "billing_payments"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 85.2,
+    "full": {
+      "tokens": 30102,
+      "latency_s": 7.81,
+      "answer": "I can help you with that. To give you the most accurate information about your refund eligibility, I have a few quick questions:\n\n1. **What plan are you on?** (Starter, Professional, or Enterprise)\n2. **Is it a monthly or annual subscription?**\n3. **When were you last billed?** (approximate date is fine)\n\nIn the meantime, here's a general overview of how cancellation and refunds work:\n\n---\n\n## Cancellation\nYou can cancel anytime by going to:\n**Settings > Billing > Cancel Subscription**\n\nYour access will continue until the end of your current billing period \u2014 you won't lose access immediately.\n\n---\n\n## Refund Eligibility (General Guidelines)\n\n| Situation | Refund Eligibility |\n|---|---|\n| **New subscription within 30 days** | Full refund (money-back guarantee) |\n| **Monthly plan, within 7 days of billing** | Refund for current month |\n| **Monthly plan, after 7 days** | Generally not eligible |\n| **Annual plan, within 30 days** | Full refund |\n| **Annual plan, after 30 days** | Prorated refund possible (up to 6 months) |\n| **ToS violation suspension** | No refund |\n\n---\n\nOnce you share your plan details and billing date, I can give you a precise answer on what refund you may be eligible for and walk you through the next steps.",
+      "score": 6,
+      "correct": false,
+      "reasoning": "The answer correctly states the cancellation path (Settings > Billing > Cancel Subscription) and mentions the 30-day money-back guarantee, but it introduces several unverified refund policies (7-day monthly refund window, prorated annual refunds up to 6 months) that are not supported by the ground-truth facts, which only specify a 30-day money-back guarantee for new subscriptions."
+    },
+    "sliced": {
+      "tokens": 4452,
+      "latency_s": 8.01,
+      "answer": "I'd be happy to help you with your cancellation and refund request. To give you the most accurate information, I have a few questions:\n\n**To process your cancellation:**\nYou can cancel anytime by going to **Settings > Billing > Cancel Subscription**. Your access will be retained until the end of your current billing period.\n\n---\n\n**Regarding your refund, the eligibility depends on your plan type:**\n\n### Monthly Plan\n- Refund is available for the current month **only if requested within 7 days of your billing date**.\n\n### Annual Plan\n- **Full refund** if within the first **30 days** of your subscription.\n- **Prorated refund** if between **30 days and 6 months** into your plan.\n- No refund after 6 months.\n\n---\n\n**To determine your eligibility, could you confirm:**\n\n1. **What plan are you on?** (Starter, Professional, or Enterprise)\n2. **Is it billed monthly or annually?**\n3. **When did your current billing period or subscription start?**\n4. **Are you based in the EU or UK?** *(Consumer protection rules may provide additional rights in those regions.)*\n\nOnce I have these details, I can give you a precise answer on your refund eligibility and open the appropriate review for you.\n\n> \u26a0\ufe0f **Please note:** Data is retained for **90 days** after cancellation, then permanently deleted. Reactivation is possible within that window.",
+      "score": 4,
+      "correct": false,
+      "reasoning": "The AI correctly identifies the cancellation path (Settings > Billing > Cancel Subscription) but fabricates complex refund rules (7-day monthly limit, prorated annual refunds, 6-month cutoff) that contradict the simple ground truth of a 30-day money-back guarantee for new subscriptions."
+    }
+  },
+  {
+    "id": "Q06",
+    "query": "Is your platform HIPAA compliant? We store patient medical data.",
+    "expected_section": "security_privacy",
+    "matched_sections": [
+      "security_privacy",
+      "legal_compliance"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.5,
+    "full": {
+      "tokens": 30105,
+      "latency_s": 11.16,
+      "answer": "## HIPAA Compliance on TechCorp Platform\n\nThank you for asking before storing patient data \u2014 that's exactly the right approach.\n\n### Short Answer\nYes, HIPAA compliance is available on our platform, but it requires specific setup steps **before** you store any PHI (Protected Health Information).\n\n---\n\n### Requirements to Enable HIPAA-Compliant Workflows\n\nYou'll need all three of the following:\n\n1. **Enterprise Plan** \u2014 HIPAA compliance is an Enterprise-only add-on\n2. **HIPAA Compliance Module** \u2014 Available as an add-on at **$200/month**\n3. **Signed Business Associate Agreement (BAA)** \u2014 Required before any PHI is stored or processed\n\n> \u26a0\ufe0f **Important:** Please do not store patient medical data on the platform until all three of these are in place. Storing PHI without a signed BAA and the HIPAA module enabled would put your organization at compliance risk.\n\n---\n\n### What the HIPAA Module Includes\n\nOnce enabled on an Enterprise account with a signed BAA, you should configure:\n\n- **Access controls** \u2014 Restrict PHI access to authorized users only\n- **Audit logs** \u2014 Full audit trail available under Settings > Security > Audit Log (7-year retention on Enterprise)\n- **Data retention policies** \u2014 Configurable retention settings\n- **Minimum necessary handling** \u2014 Limit PHI exposure to only what's needed for each workflow\n\n---\n\n### Additional Considerations\n\n- **AI Features:** If you plan to use AI Copilot features on any PHI-related workflows, the HIPAA module and BAA must be in place first\n- **Data Residency:** Consider whether US or EU data residency is required for your use case\n- **Staff Training:** Ensure team members with",
+      "score": 8,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies the HIPAA compliance module as an Enterprise add-on at $200/month, which matches the ground-truth fact, though it adds additional details (BAA requirements, module features) not verified by the ground truth."
+    },
+    "sliced": {
+      "tokens": 4062,
+      "latency_s": 11.45,
+      "answer": "## HIPAA Compliance at TechCorp\n\nThank you for asking before storing patient data \u2014 that's exactly the right approach.\n\n**Yes, HIPAA compliance is available on our platform, but several requirements must be met before you store any PHI (Protected Health Information):**\n\n---\n\n### Requirements Checklist\n\n| Requirement | Details |\n|---|---|\n| **Plan** | Enterprise plan required |\n| **HIPAA Module** | Add-on must be enabled ($200/month) |\n| **Business Associate Agreement (BAA)** | Must be signed *before* storing any PHI |\n\n> \u26a0\ufe0f **Important:** Please do not store any patient data until all three of the above are in place. Storing PHI without a signed BAA and the HIPAA module enabled would put your organization at compliance risk.\n\n---\n\n### Once the Above Are in Place\n\nAfter your Enterprise plan, HIPAA module, and BAA are confirmed, you'll also need to configure:\n\n- **Access controls** \u2014 restrict PHI access to authorized personnel only\n- **Audit logs** \u2014 ensure logging is enabled for PHI workflows\n- **Data retention settings** \u2014 configure appropriately for HIPAA requirements\n- **Staff training** \u2014 ensure your team follows minimum necessary handling standards for PHI\n\n---\n\n### Next Steps\n\nIf you're not yet on an Enterprise plan, I'd recommend reaching out to our **sales team** to discuss upgrading and getting the BAA process started.\n\nWould you like me to help route you to the right team to get the BAA and HIPAA module set up?",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies that HIPAA compliance is available as an Enterprise add-on at $200/month, which matches the ground truth facts, and adds helpful contextual information without contradicting the key facts."
+    }
+  },
+  {
+    "id": "Q07",
+    "query": "What is the parental leave policy and how many weeks are covered?",
+    "expected_section": "hr_policies",
+    "matched_sections": [
+      "hr_policies",
+      "legal_compliance"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.5,
+    "full": {
+      "tokens": 30104,
+      "latency_s": 6.76,
+      "answer": "## Parental Leave Policy\n\nTechCorp offers **16 weeks of fully paid parental leave**, with the following key details:\n\n- **Coverage:** Applies to both birth and adoption situations\n- **Eligibility:** Available to **all genders**\n- **Compensation:** Fully paid (100% of base salary) for the entire 16-week period\n\n### Additional Notes\n\n- If parental leave **overlaps with a performance review cycle**, the employee remains eligible for their review \u2014 managers should use performance evidence from the active working period.\n- Parental leave is separate from other leave types such as PTO (20 days/year) and Sick Leave (10 days/year).\n\n---\n\n> **Note:** This is an internal HR policy. If you have specific questions about your individual situation \u2014 such as how leave interacts with benefits, payroll timing, or local legal requirements \u2014 I'd recommend connecting with your **HR Business Partner (HRBP)** for personalized guidance.",
+      "score": 10,
+      "correct": true,
+      "reasoning": "The AI answer accurately captures all ground-truth facts: 16 weeks, fully paid, covering birth or adoption, available to all genders."
+    },
+    "sliced": {
+      "tokens": 4069,
+      "latency_s": 5.59,
+      "answer": "## Parental Leave Policy\n\nTechCorp offers **16 weeks of fully paid parental leave**, with the following key details:\n\n- **Eligibility:** Applies to **all genders**\n- **Qualifying events:** Both **birth and adoption**\n- **Compensation:** **Fully paid** for the entire 16-week duration\n\n### Additional Notes\n\n- If your parental leave **overlaps with a performance review cycle**, you remain eligible for your review. Your manager should use performance evidence from your active working period to complete the evaluation.\n\nIf you have specific questions about how to initiate your parental leave, coordinate timing, or understand how it interacts with other benefits, I'd recommend reaching out to your **HRBP (HR Business Partner)** for personalized guidance.",
+      "score": 10,
+      "correct": true,
+      "reasoning": "The AI answer accurately captures all key ground-truth facts: 16 weeks, fully paid, for birth or adoption, and available to all genders."
+    }
+  },
+  {
+    "id": "Q08",
+    "query": "We have 300 users. Is there a volume discount available for us?",
+    "expected_section": "sales_pricing",
+    "matched_sections": [
+      "sales_pricing",
+      "ai_features"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 87.3,
+    "full": {
+      "tokens": 30106,
+      "latency_s": 7.72,
+      "answer": "Yes! With 300 users, you qualify for a volume discount on the **Enterprise plan**.\n\nHere are the applicable volume discount tiers:\n\n| User Range | Additional Discount |\n|---|---|\n| 100\u2013250 users | 10% off base price |\n| **251\u2013500 users** | **15% off base price** |\n| 500+ users | Custom pricing |\n\nSince your 300 users fall in the **251\u2013500 user tier**, you would receive a **15% additional discount** applied to the Enterprise base price.\n\n**Enterprise base pricing for reference:**\n- Monthly: $299/month base\n- Annual: $2,870/year base (already includes 20% annual discount)\n\nThe 15% volume discount would be applied on top of the applicable base price.\n\n**Next steps:**\nSince you're in the mid-market to Enterprise range, an **Account Executive** can be assigned to work through the exact pricing, including any multi-year contract options that may offer additional savings. You can reach out directly to **enterprise@company.com** to get started.\n\nWould you like help with anything else, such as a feature comparison or information about the Enterprise plan's capabilities?",
+      "score": 8,
+      "correct": true,
+      "reasoning": "The AI correctly identifies that 300 users fall in the 251-500 user range qualifying for a 15% additional discount on the Enterprise plan, matching the ground truth, though it adds unverified details like other discount tiers, specific pricing figures, and contact information not in the ground truth."
+    },
+    "sliced": {
+      "tokens": 3820,
+      "latency_s": 8.57,
+      "answer": "Yes, a volume discount is available for your organization! Here are the details:\n\n## Volume Discount for 300 Users\n\nSince 300 users falls within the **251\u2013500 user range**, you qualify for a **15% additional discount** applied to the Enterprise plan base price.\n\n### Pricing Breakdown:\n| Billing Cycle | Base Price | With 15% Volume Discount |\n|---|---|---|\n| Monthly | $299/month | ~$254.15/month |\n| Annual | $2,870/year | ~$2,439.50/year |\n\n> **Note:** The annual plan already reflects a 20% savings over monthly billing, so combining annual billing with the 15% volume discount offers the best overall value.\n\n---\n\n## Next Steps\n\nSince you have **300 users**, you fall into the **mid-market segment (50\u2013500 users)**, which means:\n- An **Account Executive will be assigned within 1 business day** to assist you.\n- You may also be eligible for **additional discounts** through multi-year contracts or other commercial terms.\n- Enterprise customers have access to an **MSA, DPA, Net-30 payment terms, and Purchase Order acceptance**.\n\nTo get started, you can reach out to our sales team or request a quote through the website, and an AE will be in touch promptly. Would you like help with anything else regarding pricing or your account?",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies that 300 users falls in the 251-500 range and qualifies for a 15% additional discount on the Enterprise plan, matching the ground truth facts exactly."
+    }
+  },
+  {
+    "id": "Q09",
+    "query": "How do I import my existing boards and projects from Trello?",
+    "expected_section": "onboarding",
+    "matched_sections": [
+      "onboarding",
+      "product_features"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.4,
+    "full": {
+      "tokens": 30104,
+      "latency_s": 11.87,
+      "answer": "## Importing from Trello\n\nGreat news \u2014 Trello imports are natively supported! Here's how to get it done:\n\n### Steps to Import\n\n1. **Go to Settings > Import > Trello** in your TechCorp account\n2. **Authorize the OAuth connection** to your Trello account\n3. **Select the boards** you want to import\n4. **Review the field mapping** and confirm\n5. **Run the import** \u2014 your boards and their structure will be preserved\n\n---\n\n### What to Know Before You Start\n\n\u2705 **What comes over:**\n- Boards are preserved in the import\n- Standard Trello fields map automatically\n\n\u26a0\ufe0f **Known limitations:**\n- **Boards nested within Trello Teams** are not supported by the native importer \u2014 you'll need to either export those boards individually or use a CSV workaround\n- Translated/custom content may need review after import\n\n---\n\n### Best Practices\n\n- **Always do a test import first** on a sample board before running your full migration \u2014 this helps catch any issues before they affect your real data\n- **Review assignee mappings** \u2014 if Trello usernames don't match emails in your TechCorp account, those tasks may become unassigned and need manual cleanup\n\n---\n\n### Need More Help?\n\nYour available support level depends on your plan:\n- **Starter:** Self-serve docs and community forum\n- **Professional:** 1 live onboarding call (60 min) + dedicated email support\n- **Enterprise:** Dedicated onboarding manager with custom migration support\n\nIf you run into an import issue or data doesn't come through as expected, please **don't repeat the import** \u2014 contact support first so we can preserve logs and investigate.\n\nWhat plan are you on, and how many boards are",
+      "score": 8,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies the core ground-truth facts: use Settings > Import > Trello for native import and that boards are preserved, while adding extra details that are plausible but unverified."
+    },
+    "sliced": {
+      "tokens": 4102,
+      "latency_s": 10.48,
+      "answer": "## Importing Your Trello Boards into TechCorp\n\nGreat news \u2014 TechCorp supports a **native Trello import** that preserves your board structure. Here's how to do it:\n\n### Steps to Import\n\n1. Go to **Settings > Import > Trello**\n2. Authorize your Trello account when prompted\n3. Select the boards you want to import\n4. Review the mapping and confirm the import\n\nYour boards and their structure will be preserved through this process.\n\n---\n\n### Important Recommendations\n\n- \u2705 **Run a test import first** \u2014 Before importing all your boards, validate a sample to confirm everything maps correctly. This helps avoid data issues on your full migration.\n- \u2705 **Validate sample tasks** after the test import before proceeding with the full set.\n\n---\n\n### Known Limitation to Be Aware Of\n\n> \u26a0\ufe0f **Trello boards nested in Teams are not supported** by the native import tool.\n\nIf any of your boards are nested within a Trello Team structure, you have two options:\n- Export those boards **individually** from Trello first, then import them\n- Use a **CSV workaround** via the import template at **help.company.com/import-template**\n\n---\n\n### Need More Help?\n\nThe level of support available depends on your plan:\n- **Starter:** Self-serve docs, video library, and community forum\n- **Professional:** Dedicated email support + 1 live onboarding call\n- **Enterprise:** Dedicated onboarding manager who can guide you through the full migration\n\nDo you know if any of your boards are nested in Trello Teams, or are they all standard boards? That'll help confirm the best path forward for you.",
+      "score": 8,
+      "correct": true,
+      "reasoning": "The AI answer correctly identifies the native Trello import path (Settings > Import > Trello) and confirms that boards are preserved, matching the ground-truth facts, though it includes additional details not in the ground truth that cannot be verified."
+    }
+  },
+  {
+    "id": "Q10",
+    "query": "Who owns the data I store in your platform? Does your company have any rights over it?",
+    "expected_section": "legal_compliance",
+    "matched_sections": [
+      "legal_compliance",
+      "security_privacy"
+    ],
+    "routing_correct": true,
+    "token_reduction_pct": 86.5,
+    "full": {
+      "tokens": 30109,
+      "latency_s": 9.83,
+      "answer": "## Your Data Ownership\n\n**You retain full and complete ownership of all data you store in the TechCorp platform.** TechCorp Inc. does not claim ownership over your customer data.\n\n---\n\n### What Rights Does TechCorp Have?\n\nTechCorp holds only a **limited license** to your data, and solely for the purpose of operating, securing, and supporting the service as outlined in the agreement. This means we can:\n\n- Store and process your data to deliver the platform functionality\n- Use it to provide technical support when needed\n- Apply security measures to protect it\n\nWe do **not** use your data for any other purpose, including:\n- \u274c Selling your data to third parties\n- \u274c Training our base AI models on your data\n- \u274c Using it for marketing or advertising purposes\n\n---\n\n### Additional Protections\n\n| Protection | Detail |\n|---|---|\n| **Data Export** | You can export all your data as JSON or CSV at any time |\n| **Right to Erasure** | Submit a deletion request to privacy@company.com, processed within 30 days |\n| **AI & Data** | Customer data is not used to train base AI models |\n| **Encryption** | Your data is protected with AES-256 at rest and TLS 1.2/1.3 in transit |\n\n---\n\n### For Enterprise Customers\nA **Data Processing Agreement (DPA)** is available (required for GDPR compliance) and is bundled with the MSA. It includes GDPR Article 28 compliance and Standard Contractual Clauses (SCCs).\n\nFor paid plans on all tiers, you can request a DPA by contacting support.\n\n---\n\nDo you have any specific concerns about data privacy, compliance, or a particular",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer correctly states that customers retain full ownership of all their data and that TechCorp holds only a limited license solely for service operation, which aligns with both ground-truth facts."
+    },
+    "sliced": {
+      "tokens": 4066,
+      "latency_s": 8.87,
+      "answer": "## Data Ownership\n\n**You retain full and complete ownership of all your customer data** stored on the TechCorp platform. This is a core principle of our terms and is not subject to negotiation or plan tier.\n\n### TechCorp's Limited Rights\n\nTechCorp does receive a **limited license** to your data, but this is strictly scoped:\n\n- \u2705 **Permitted:** Using the license solely to **operate, secure, and support the service** on your behalf\n- \u274c **Not permitted:** Using your data for any purpose beyond what is necessary to deliver the service\n\nIn practical terms, this means we can process your data to run the platform and provide you with support \u2014 but we do not claim ownership, and your data is not used for other purposes such as advertising, resale, or unauthorized analytics.\n\n### Additional Protections to Note\n\n- **Data export:** You can export your full account data at any time in JSON or CSV format\n- **Right to erasure:** You can request data deletion via privacy@company.com, processed within 30 days\n- **Encryption:** Your data is protected with AES-256 encryption at rest and TLS 1.3 in transit\n- **GDPR compliance:** A Data Processing Agreement (DPA) is available for all paid plans, which formally documents our obligations as a data processor under GDPR Article 28\n\n---\n\nIf you have specific contractual questions about data rights \u2014 such as indemnification, sub-processor access, or custom DPA terms \u2014 I'd recommend routing those to Legal for formal review, as interpretations can vary based on your signed agreement and jurisdiction.",
+      "score": 9,
+      "correct": true,
+      "reasoning": "The AI answer accurately states that the customer retains full ownership of their data and that the company only has a limited license for service operation, which directly matches both ground-truth facts, with additional supporting details that are consistent and reasonable."
+    }
+  }
+]
