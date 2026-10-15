@@ -10,8 +10,8 @@ Modes: manual, llm, cross, llm_cross, both (manual + llm), all.
 --mode defaults to $BENCHMARK_INDEX_MODE, then "manual".
 
 Outputs (in results/):
-    benchmark_results[_<mode>].json — raw per-query data
-    report[_<mode>].txt             — human-readable report
+    benchmark_results_<mode>.json — raw per-query data
+    report_<mode>.txt             — human-readable report
     comparison_summary.txt          — multi-mode summary when applicable
 """
 
@@ -240,7 +240,7 @@ def main() -> None:
             label="manual keywords",
             sections=PROMPT_SECTIONS,
             full_prompt=FULL_SYSTEM_PROMPT,
-            suffix=None if mode == "manual" else "manual",
+            suffix="manual",
         ))
 
     llm_sections = None
